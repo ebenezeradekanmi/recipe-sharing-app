@@ -1,3 +1,5 @@
+// src/components/RecipeList.jsx
+import React from "react";
 import { useRecipeStore } from "../recipeStore";
 
 const RecipeList = () => {
@@ -5,12 +7,16 @@ const RecipeList = () => {
 
   return (
     <div>
-      {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <h3>{recipe.title}</h3>
-          <p>{recipe.description}</p>
-        </div>
-      ))}
+      {recipes.length === 0 ? (
+        <p>No recipes yet</p>
+      ) : (
+        recipes.map((recipe) => (
+          <div key={recipe.id}>
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 };
