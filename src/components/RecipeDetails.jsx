@@ -1,4 +1,6 @@
-import { useRecipeStore } from "../recipeStore"; // updated import
+// src/components/RecipeDetails.jsx
+import React from "react";
+import { useRecipeStore } from "./recipeStore";
 
 const RecipeDetails = ({ recipeId }) => {
   const recipe = useRecipeStore((state) =>
